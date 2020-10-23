@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Company">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Employee" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Emp-name" type="xs:string"/>
+							<xs:element name="Emp-age" type="xs:integer"/>
+							<xs:element name="Emp-salary" type="msi0"/>
+							<xs:element name="Emp-emailid" type="msi1"/>
+							<xs:element name="Emp-Phonenum" type="msi2"/>
+							<xs:element name="Emp-designation" type="xs:string"/>
+						</xs:sequence>
+						<xs:attribute name='EMPID' type="xs:ID" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="msi0">
+		<xs:restriction base="xs:integer">
+			<xs:minExclusive value="50000"/>
+			<xs:maxExclusive value="200000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+</xs:schema>
